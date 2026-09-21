@@ -14,7 +14,7 @@ The engine serves a local gRPC API, defined in
 
 | Token | File | Reaches |
 |---|---|---|
-| research | `engine.json` | the `Research` service: strategies, instruments, findings, studies, walk-forwards, bars, reported evidence. What an agent or a script gets |
+| research | `engine.json` | the `Research` service: strategies, instruments, findings, studies, walk-forwards, the library's bars and their regimes, comparisons, reported evidence. What an agent or a script gets |
 | control | `control.json` | everything else: `ResearchFiles`, `Market` (fetching, sources, the watchlist, quotes), `Accounts`, `Portfolio`, `Platform` (plugins, jobs, events), `Sessions`, `Scripts`. What a person's front end gets |
 
 A refusal is a gRPC status, never a message with an error field. Field

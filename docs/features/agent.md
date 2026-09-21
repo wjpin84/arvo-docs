@@ -14,8 +14,10 @@ The `agent.command` setting names any other ACP agent.
 ## What the agent can do
 
 - read findings, list rules and rulesets, write a ruleset, run a study or a
-  walk-forward — Arvo's MCP tools, behind the **research token**, which has
-  no call that fetches data, touches a credential or trades;
+  walk-forward, look at the bars a study saw and the regime each closed in,
+  and read findings against each other — Arvo's MCP tools, behind the
+  **research token**, which has no call that fetches data, touches a
+  credential or trades;
 - read and write files in the project (a ruleset it writes appears in the
   editor);
 - run commands in the project folder, each behind a permission prompt, with
