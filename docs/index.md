@@ -41,11 +41,18 @@ believing them**. Everything else follows from one rule:
     audits its book against the venue every poll, freezes on a disagreement
     and waits for you. One kill switch, everywhere. [Sessions →](features/sessions.md)
 
+- **Automated trading, explained**
+
+    The end goal: a rule that survived research trades on its own, and
+    every order it places can be walked back to a bar and a rule. The
+    agent's part is to write and test the rules that trade, and to operate
+    them; it does not place trades of its own. [Where this is going →](about/horizon.md)
+
 - **An agent beside the code**
 
     The Agent panel runs Claude Code (or any Agent Client Protocol agent)
-    with Arvo's research tools attached: it can write rulesets and run
-    studies, and cannot trade. [The Agent panel →](features/agent.md)
+    with Arvo's research tools attached: it writes rulesets, runs studies
+    and reads findings. [The Agent panel →](features/agent.md)
 
 - **Every position explained**
 

@@ -24,6 +24,23 @@ The `agent.command` setting names any other ACP agent.
 What it cannot do, by construction: reach an account, an order, or anything
 outside the project.
 
+## Where the agent fits in automated trading
+
+Arvo's end goal is automated trading: a rule that survived research runs
+against a venue with no person at each order. That is what a
+[session](sessions.md) is. The agent's role is to **set up the rules that
+trade** — author rulesets, run studies, read the advice, and in time
+promote a finding to a session and adjust it from the daily reviews. The
+rule trades; the agent researches and operates. Every order is still one
+the gate sized and the record can explain back to a bar and a rule.
+
+The other meaning — the agent looks at the market and places an order
+because it decided to — is deliberately not built. An order like that has
+no rule behind it to backtest, no finding to go stale and no search to
+deflate against; nothing explains it but a transcript. If it is ever
+built, it goes through the gate like any other proposer, and it takes a
+decision that supersedes the current one. [Where this is going →](../about/horizon.md)
+
 ## What the panel shows
 
 The agent's words; each tool call as a card with its state, the files it

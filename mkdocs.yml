@@ -100,3 +100,4 @@ nav:
   - About:
       - Architecture: about/architecture.md
       - Decisions: about/decisions.md
+      - Where this is going: about/horizon.md
