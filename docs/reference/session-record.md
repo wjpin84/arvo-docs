@@ -24,6 +24,7 @@ reads it from disk; `session explain` walks it.
 | `resumed` | why, when the feed came back | a Resume, or the feed |
 | `resume_refused`, `reconcile_failed`, `audit_failed`, `fetch_failed`, `settle_failed` | the reason | |
 | `halted` | why; for the kill switch also what `flattened` and what `failed` | the gate, or a Halt |
+| `warning` | `entered` and `cleared`, the limits by name, and `near`, everything the session is near now in the gate's words: `drawdown 8.1% of a 10.0% limit`. Written when the set changes, not when a figure moves | a bar, or a settle |
 | `verdict` | `holding`, `diverging` or `inconclusive`, and for diverging the `reason` (`expectancy`, `drawdown`, `frequency`, `regime`, `execution`) with what was seen and what was expected. Written when it changes | a settle |
 | `stopped` | | a Stop |
 

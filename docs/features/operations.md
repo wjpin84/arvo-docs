@@ -8,6 +8,7 @@ the list, in the order someone should care:
 - a session frozen (with Reconcile and Resume right there), halted, failed,
   or running with an error;
 - the price stream interrupted;
+- a session near one of the gate's limits, with the figure;
 - a session Diverging from its finding, with the reason;
 - the risk model refused;
 - findings gone stale.

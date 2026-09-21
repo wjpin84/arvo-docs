@@ -20,6 +20,17 @@ A refusal is a fact worth counting, not a log line: `Stale`, `TooSmall`,
 `NoStop`, `NotWholeLot`, `DailyLossLimit`, `TooManyPositions`, `Correlated`,
 `Halted`, and the rest — each named on the record.
 
+## The warning band
+
+At four fifths of any limit the gate says so, before it acts: the drawdown
+against its halt, today's loss against the daily limit, positions against
+the cap, day trades against the pattern-day-trader budget. A session near a
+limit shows it on its row, in Operations and on the Risk tab, writes a
+`warning` event to its record when a limit is entered or cleared, and
+raises an alert on entering. The gate keeps accepting; this is the one
+moment a person can act before it acts for them. A halted session is past
+warning and shows none.
+
 ## What the gate never decides
 
 **Exits.** Every check in the gate asks whether to *take* risk; none may
