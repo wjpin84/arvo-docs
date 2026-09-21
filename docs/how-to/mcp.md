@@ -25,6 +25,7 @@ engine appends every run to `agent-audit.jsonl` in the project.
 | `run_study` / `run_walk_forward` | run, and answer with the finding |
 | `query_market_data` | the library's bars for an instrument over a window, at most 2000 from the end; read-only, nothing is fetched |
 | `inspect_regime` | the regime each bar closed in over a window (trending up, trending down, ranging), labelled after the fact over the closes; compare with the regime on each trade in a finding |
+| `read_review` | the review after the close for a day: what every session did and what a person did, as one report |
 | `compare_experiments` | two or more findings read against each other, one row each, then the comparison's own deflation: keeping the best of six is a search of size six |
 
 The Agent panel in the window is the same server attached to an agent over

@@ -73,6 +73,7 @@ nav:
       - Operations: features/operations.md
       - The audit chain and the journal: features/journal.md
       - The Agent panel: features/agent.md
+      - The review after the close: features/review.md
       - Scripts and schedules: features/scripts.md
   - How-to:
       - Write a ruleset: how-to/write-a-ruleset.md

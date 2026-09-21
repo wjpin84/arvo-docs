@@ -13,6 +13,7 @@ arvo-engine session start <finding> <executor>
 arvo-engine session stop|reconcile|resume <id>
 arvo-engine session halt <id>|--all [reason...] the kill switch: arm the gate, flatten, stay halted
 arvo-engine session explain <id> <time>        the chain behind every position held then
+arvo-engine [<data-dir>] review [YYYY-MM-DD]   the review after the close, written and printed
 ```
 
 A session's `<id>` is `<finding>@<executor>`, as `session list` prints it,

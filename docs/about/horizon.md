@@ -31,20 +31,17 @@ what to change.
 
 ## The two daily analyses
 
+**After the close** is built: [the review](../features/review.md), written
+fifteen minutes after the regular close.
+
 **Before the open**: overnight and pre-market moves on everything held or
 watched, the day's calendar (earnings, releases, expiries), what the rules
 will do at the open and what the gate would size them at, and the state of
 the plane — accounts, feeds, frozen or halted sessions, stale findings.
 
-**After the close**: every signal and what the gate did with it, every fill
-against its decision price (the slippage the venue measured against the
-cost the finding assumed), the journal on every trade so the review can say
-which condition fired in which regime, refusals by reason, and the day's
-P&L against the drawdown halt.
-
-Both are scheduled jobs writing a report into the project, a view in the
-window, and a research tool so the agent can be asked *why did today go the
-way it did*.
+Both are scheduled jobs writing a report into the project, and a research
+tool so the agent can be asked what happened. The review after the close
+exists; the briefing before the open waits on calendar data.
 
 ## All markets
 
