@@ -40,3 +40,19 @@
 .arvo-verdict-supported { color: #3a9d5d; font-weight: 600; }
 .arvo-verdict-inconclusive { color: #fbbf24; font-weight: 600; }
 .arvo-verdict-notsupported { color: #d64545; font-weight: 600; }
+
+.arvo-hero-image {
+  display: block;
+  width: 100%;
+  border-radius: 0.4rem;
+}
+
+.arvo-card {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.arvo-card img {
+  border-radius: 0.6rem;
+  max-width: 100%;
+}

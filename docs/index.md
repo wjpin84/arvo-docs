@@ -5,9 +5,9 @@ hide:
 
 <div class="arvo-hero" markdown>
 
-# Arvo
+![Arvo — Financial Intelligence Platform](assets/arvo-hero.png){ .arvo-hero-image }
 
-<p class="tagline">Financial Intelligence Platform — research, code and trading in one window, on an engine that keeps running when the window closes.</p>
+<p class="tagline">Research, code and trading in one window, on an engine that keeps running when the window closes.</p>
 
 </div>
 
@@ -60,6 +60,10 @@ believing them**. Everything else follows from one rule:
     crates and a Python package. [Extending →](extend/extensions.md)
 
 </div>
+
+<figure class="arvo-card" markdown>
+![Your financial world. Smarter.](assets/arvo-card.png){ width="460" }
+</figure>
 
 ## Where to start
 
