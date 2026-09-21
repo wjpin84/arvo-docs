@@ -10,6 +10,8 @@
 
 **Verdict** — `Supported`, `NotSupported` or `Inconclusive`. Computed by Arvo, never supplied.
 
+**Holding / Diverging** — a session's verdict: whether the live trades still look like the finding's out-of-sample trades. Inconclusive until there are enough of them. Judges the rule, not the account; the gate's halts do that.
+
 **Advice** — what a finding says to read before its numbers: a finding in words, evidence, an action, a severity.
 
 **Deflation** — judging the best of a search against what the best of that many random tries would show.

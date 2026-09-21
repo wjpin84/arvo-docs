@@ -25,6 +25,21 @@ them with this in mind), `info`. Examples the platform produces:
 - *The selection did not survive deflation* — the best of this many tries is what luck produces.
 - *The dividend gap is most of the margin* — the split-adjusted series cannot see distributions the benchmark paid.
 
+## A session's verdict
+
+The same vocabulary, applied while a rule trades, by comparing the
+session's ledger with the finding's out-of-sample expectation:
+
+| Verdict | Reason named when it applies |
+|---|---|
+| **Holding** | |
+| **Diverging** | `expectancy` (live expectancy per trade outside the out-of-sample interval, after enough trades), `drawdown` (beyond the out-of-sample max by a factor, before the account's halt), `frequency` (firing far less or more often than in the window), `regime` (entries in a regime the finding was not Supported in), `execution` (slippage above the cost model assumed) |
+| **Inconclusive** | too few live trades yet |
+
+A verdict never touches the gate. It feeds the warning tier and the
+promotion gate: a live executor refuses a finding whose paper session was
+Diverging.
+
 ## Staleness
 
 `stale_reason` on a finding: `data`, `ruleset`, or both. The finding stays;

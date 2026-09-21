@@ -49,6 +49,36 @@ status; the halt stands either way. From a session's row, from the
 Operations view, from the tray (**Halt trading**, every session) or from
 the command line. [How to halt →](../how-to/halt.md)
 
+## When a rule stops working
+
+A finding says whether a rule worked on its out-of-sample window. A session
+answers the question that comes next, in the same vocabulary:
+
+| Verdict | Meaning |
+|---|---|
+| **Holding** | the live trades sit inside what the out-of-sample distribution would produce |
+| **Diverging** | expectancy, drawdown or firing rate has left that range; the reason is named |
+| **Inconclusive** | too few live trades to say, which is where every session starts |
+
+The expectation comes from the finding: its out-of-sample trade
+distribution, its max drawdown, how often the rule fired, and which regimes
+its trades landed in. The session's own ledger, with the same journal on
+every trade, is compared against it as the trades accumulate. A rule that
+fires a quarter as often as it did is a regime change before it is a loss;
+entries landing in a regime the finding was never Supported in are a reason
+before the money says so.
+
+A verdict is not a risk limit. Diverging changes nothing at the gate. It is
+recorded, raised as an alert, shown on the session and in Operations, and
+it is the case for demoting the session, decided by a person or the agent.
+The drawdown halt and the daily loss limit protect the account; the verdict
+judges the rule.
+
+!!! note "Being built"
+    Tracked as [#221](https://github.com/wjpin84/arvo-desktop/issues/221) in M11. Today a session shows
+    its fills, refusals and freezes, and the gate's halts; the verdict and
+    its reasons are the next thing the row gains.
+
 ## The record
 
 Everything a session does is one JSON line per event in

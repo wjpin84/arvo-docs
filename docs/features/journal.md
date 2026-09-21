@@ -26,6 +26,22 @@ AAPL.AIEX: 297 at 2026-09-21T14:00:00+00:00
 A position the session adopted through a reconcile says so instead of
 inventing a bar behind it. [How to explain a position →](../how-to/explain.md)
 
+## Losses, grouped
+
+A single loss is a ledger row. What says *how* a rule is failing is losses
+grouped by the condition that fired, the regime at entry and the exit
+reason, with the finding's out-of-sample figure for the same group beside
+each. "Stop exits in ranging regimes" is a diagnosis; a list of red rows is
+not. The Trades tab and the after-close review both show the grouping.
+
+## The operator's behaviour
+
+The record also holds what the person did: positions adopted because
+something traded by hand, halts and resumes, a session stopped after a
+losing day, a ruleset edited while a session ran on it. The after-close
+review counts these beside the day's P&L, because intervening after losses
+is the most common way a Supported rule underperforms its backtest.
+
 ## On every trade
 
 Backtest and live alike, each trade carries a **journal**: the condition
