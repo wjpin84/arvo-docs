@@ -55,6 +55,14 @@ The refusal names the gate and every reason at once, so they can be fixed
 together. Paper needs no promotion. The gate is on the start itself, for
 people and agents alike: nothing else creates a session.
 
+The Sessions tab asks the gate as soon as a finding and an executor are
+chosen and shows the road under the form: the finding's verdict, the days
+on paper and the paper session's verdict, and for a real-money executor
+either the reasons it refuses or that it allows. The button reads
+**Promote** for real money and stays disabled while the gate refuses. The
+same question is on the API as `CheckPromotion`, so an agent given the
+control tier can ask before it tries.
+
 ## The kill switch
 
 **Halt** arms the gate and then flattens everything the session holds, in
