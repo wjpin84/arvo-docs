@@ -72,6 +72,17 @@ status; the halt stands either way. From a session's row, from the
 Operations view, from the tray (**Halt trading**, every session) or from
 the command line. [How to halt →](../how-to/halt.md)
 
+## What the fills cost
+
+A paper session exists to measure what a backtest cannot: what a fill
+actually costs against the price the decision was made at. Once anything
+has filled, the session carries its divergence: mean and worst adverse
+slippage in basis points across its fills, with the slippage the finding's
+cost model assumed beside it, the mean signal-to-fill latency, and how many
+approved orders never filled (never averaged in: a backtest assumes every
+order fills). It is under the selected session in the Sessions tab and on
+`session list`, and the verdict's `execution` reason reads the same figure.
+
 ## When a rule stops working
 
 A finding says whether a rule worked on its out-of-sample window. A session
