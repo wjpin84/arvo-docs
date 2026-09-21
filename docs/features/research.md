@@ -17,7 +17,14 @@ replay, compare and export.
 4. **Evaluates.** Against the criteria — at least 30 trades, a positive
    excess return over the benchmark, a drawdown under 30% — and against
    a benchmark curve of buying and holding the instrument.
-5. **Records.** The finding, with its verdict, its advice, both curves,
+5. **Asks whether the costs made it.** A result that would be Supported is
+   run again under the **conservative cost tier**: half again the
+   commission, twice the slippage and never under five basis points, twice
+   the fees, twice an option's spread. If it is not Supported there, the
+   finding is refused, with the reason, and the advice says so first: the
+   edge was the cost assumption's, not the rule's. A verdict is never
+   upgraded by this, only refused.
+6. **Records.** The finding, with its verdict, its advice, both curves,
    the trade ledger with what the rule saw on every trade, the dataset's
    content hash, the ruleset's hash and the engine's commit — so a finding
    knows when it has gone **stale** because its data or its ruleset changed.

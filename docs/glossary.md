@@ -14,6 +14,8 @@
 
 **Advice** — what a finding says to read before its numbers: a finding in words, evidence, an action, a severity.
 
+**Cost tiers** — realistic (the experiment's stated model), conservative (half again the commission, twice the slippage with a five-point floor, twice the fees) and optimistic (half the commission, nothing else). A Supported result must survive the conservative tier.
+
 **Deflation** — judging the best of a search against what the best of that many random tries would show.
 
 **Out of sample** — the held-out window the selected configuration is scored on; the only numbers reported as a result.

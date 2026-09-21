@@ -24,6 +24,7 @@ them with this in mind), `info`. Examples the platform produces:
 - *The point estimate says nothing about its own error* — lengthen the window; do not compare this Sharpe against another until it is.
 - *The selection did not survive deflation* — the best of this many tries is what luck produces.
 - *The dividend gap is most of the margin* — the split-adjusted series cannot see distributions the benchmark paid.
+- *Supported only under the stated costs* — do not promote this; widen the edge or trade less often until the rule survives fills that cost twice what was assumed.
 
 ## A session's verdict
 
@@ -39,6 +40,17 @@ session's ledger with the finding's out-of-sample expectation:
 A verdict never touches the gate. It feeds the warning tier and the
 promotion gate: a live executor refuses a finding whose paper session was
 Diverging.
+
+## Cost tiers
+
+Every experiment states one cost model, the **realistic** one: what a fill
+is expected to cost at the venue it was studied for. Two more are derived
+from it. **Conservative** is half again the commission, twice the slippage
+and never under five basis points, twice the flat and per-unit fees, twice
+an option's spread; a study that would be Supported is asked whether it
+survives this, and refused if not. **Optimistic** is half the commission
+and nothing else, a floor for asking how much of a result is costs; nothing
+is ever judged under it.
 
 ## Staleness
 
