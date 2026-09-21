@@ -40,6 +40,21 @@ records the discrepancy. **Reconcile** makes the gate's book the venue's
 until a reconcile has happened. Both are events in the record. Nothing
 resumes on its own.
 
+## The promotion gate
+
+A real-money executor takes only a finding that earned it. On start, a
+session on `alpaca-live` or a Robinhood account is refused unless:
+
+- the finding's verdict is **Supported**;
+- the finding has run on `alpaca-paper` for at least **five days**, by the
+  paper session's record;
+- that paper session was not **Diverging** from the finding when last
+  judged.
+
+The refusal names the gate and every reason at once, so they can be fixed
+together. Paper needs no promotion. The gate is on the start itself, for
+people and agents alike: nothing else creates a session.
+
 ## The kill switch
 
 **Halt** arms the gate and then flattens everything the session holds, in

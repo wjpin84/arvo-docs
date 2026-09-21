@@ -25,3 +25,7 @@ What to expect:
   should not start believing it is flat when it is not.
 
 Stopping leaves positions as they are. Halting flattens them.
+
+Paper is also the road to real money: a live executor refuses a finding
+without a Supported verdict and five days on paper that did not diverge
+from it. [The promotion gate →](../features/sessions.md#the-promotion-gate)

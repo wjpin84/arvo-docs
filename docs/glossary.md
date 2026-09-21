@@ -42,6 +42,8 @@
 
 **Reconcile** — making the gate's book the venue's. **Resume** — taking entries again, after a reconcile.
 
+**Promotion gate** — what a finding must have before a real-money executor takes it: a Supported verdict, five days on paper, and no Diverging verdict on that paper session.
+
 **Kill switch** — arm the gate, then flatten everything held. *Halt trading* in the tray, `halt` on a session.
 
 **Record** — a session's JSONL file, one event per line, each naming its cause.
