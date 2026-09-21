@@ -54,6 +54,13 @@ pause, then reported unreachable with the count. Arvo stops what it started
 — when the extension is disabled or removed, and when Arvo quits — by
 terminating it; there is no shutdown call.
 
+## Streaming
+
+Not yet. A source serves bars on request and a session on its venue polls
+once a minute. A `Stream` call on the Source service is designed and
+tracked on the desktop repository; it goes in with the first provider that
+needs it.
+
 ## Signals
 
 `Describe` says what you publish: a name in the open dotted namespace, a

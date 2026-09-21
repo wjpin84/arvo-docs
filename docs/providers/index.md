@@ -40,6 +40,15 @@ streams one-minute bars over a websocket, aggregated to the rule's interval
 other source is polled once a minute. A feed that goes dark freezes the
 session and lifts the freeze itself when the feed returns.
 
+A provider written against the extension protocol cannot stream yet: the
+Source service has no streaming call, so a session on a plugin's venue
+polls. The call is designed and waits for a provider that needs it; a
+finer live feed than Alpaca's, such as one-second bars, is the case for
+it. When it lands, the engine builds the rule's interval from whatever the
+provider sends, and orders still go to whichever executor the session was
+started on, so a rule researched on one vendor's bars can trade on another
+vendor's account.
+
 ## Intervals
 
 `1day` everywhere; `5minute` (and other minute steps) where the source
