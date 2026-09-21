@@ -1,0 +1,102 @@
+site_name: Arvo
+site_description: Arvo — Financial Intelligence Platform. Research, code and trading in one window, with an engine that keeps running when the window closes.
+site_url: https://wjpin84.github.io/arvo-docs/
+repo_url: https://github.com/wjpin84/arvo-docs
+edit_uri: edit/main/docs/
+copyright: Apache-2.0. Arvo links NautilusTrader (LGPL-3.0-only) into the engine.
+
+theme:
+  name: material
+  logo: assets/arvo-mark.svg
+  favicon: assets/arvo-mark.svg
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Light
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dark
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.keys
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Install: getting-started/install.md
+      - First run: getting-started/first-run.md
+      - Accounts and credentials: getting-started/accounts.md
+      - Settings: getting-started/settings.md
+  - Providers:
+      - Sources and executors: providers/index.md
+      - Alpaca: providers/alpaca.md
+      - Robinhood: providers/robinhood.md
+      - Yahoo Finance: providers/yahoo.md
+  - Features:
+      - Research: features/research.md
+      - Rules and rulesets: features/rulesets.md
+      - The risk gate: features/risk.md
+      - Sessions: features/sessions.md
+      - Operations: features/operations.md
+      - The audit chain and the journal: features/journal.md
+      - The Agent panel: features/agent.md
+      - Scripts and schedules: features/scripts.md
+  - How-to:
+      - Write a ruleset: how-to/write-a-ruleset.md
+      - Run a study and read the verdict: how-to/run-a-study.md
+      - Start a paper session: how-to/paper-session.md
+      - When a session freezes: how-to/frozen-session.md
+      - Halt trading: how-to/halt.md
+      - Ask the agent: how-to/agent.md
+      - Research from Python: how-to/python.md
+      - Arvo in Claude Code and other agents: how-to/mcp.md
+      - Explain a position: how-to/explain.md
+  - Examples: examples/index.md
+  - Extending:
+      - Extensions: extend/extensions.md
+      - Strategies as documents: extend/strategies.md
+      - Writing a provider: extend/providers.md
+  - Reference:
+      - Command line: reference/cli.md
+      - Settings keys: reference/settings.md
+      - The session record: reference/session-record.md
+      - The risk model: reference/risk-model.md
+      - Verdicts and advice: reference/verdicts.md
+      - The API and the packages: reference/api.md
+  - Glossary: glossary.md
+  - About:
+      - Architecture: about/architecture.md
+      - Decisions: about/decisions.md

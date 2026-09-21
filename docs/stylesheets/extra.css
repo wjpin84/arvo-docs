@@ -1,0 +1,42 @@
+/* The brand palette, from the brand sheet: ground, chrome, accent, gold, foreground. */
+:root {
+  --md-primary-fg-color: #1E293B;
+  --md-primary-fg-color--light: #2563EB;
+  --md-primary-fg-color--dark: #0A0F1A;
+  --md-accent-fg-color: #2563EB;
+  --md-accent-fg-color--transparent: rgba(37, 99, 235, 0.1);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0A0F1A;
+  --md-default-fg-color: #F8F9FA;
+  --md-code-bg-color: #1E293B;
+  --md-typeset-a-color: #D4AF37;
+}
+
+.md-header, .md-tabs {
+  background-color: #0A0F1A;
+}
+
+.md-header__title {
+  font-weight: 600;
+}
+
+.arvo-hero {
+  margin: 1rem 0 2rem;
+}
+
+.arvo-hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.arvo-hero p.tagline {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  margin-top: 0;
+}
+
+.arvo-verdict-supported { color: #3a9d5d; font-weight: 600; }
+.arvo-verdict-inconclusive { color: #fbbf24; font-weight: 600; }
+.arvo-verdict-notsupported { color: #d64545; font-weight: 600; }

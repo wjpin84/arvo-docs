@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The Arvo mark, as vector.
+
+  The one the app uses: the icons and the in-app mark are rendered from this
+  (tools/make_icons.py), and it is the version that has to survive being 16px
+  in a menu, 2000px on a page, and recoloured for a monochrome context. It
+  follows the sheet's hero mark rather than any of the smaller renditions on
+  the sheet, which disagree with each other; the sheet is generated artwork
+  and stays as the reference it was drawn from.
+
+  What the hero has, in the order it is drawn here:
+
+  - A ring, gold, lit blue along its upper right and lower left.
+  - A peak with no crossbar and no base: two thick legs meeting at the apex,
+    open at the bottom, which is what makes it a letter and not a warning
+    triangle. The first drawing of this closed the triangle, and read as one.
+  - The right leg's lower face turned away from the light: navy, from where
+    the sweep crosses it down to the foot, the turning edge catching gold.
+    It is part of the leg, not a shape inside the counter.
+  - The sweep, from outside the ring on the lower left, rising through the
+    peak in front of both legs, thinning to a point at each end.
+
+  No background: sitting it on a light theme, a dark theme or a page is the
+  caller's business. The gold and blue read against both ends of the app's
+  own palette, which is the point of them being the palette's colours.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256"
+     height="256" role="img" aria-label="Arvo">
+  <title>Arvo</title>
+
+  <defs>
+    <!-- The legs are lit from the upper left. -->
+    <linearGradient id="peak" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#f6e6b4" />
+      <stop offset="0.5" stop-color="#d4af37" />
+      <stop offset="1" stop-color="#9a7b23" />
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a8801f" />
+      <stop offset="0.5" stop-color="#f8e2a0" />
+      <stop offset="1" stop-color="#c9a233" />
+    </linearGradient>
+    <!-- The fold: the face turned away from the light. -->
+    <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3a52" />
+      <stop offset="1" stop-color="#0a0f1a" />
+    </linearGradient>
+  </defs>
+
+  <!-- The ring. -->
+  <circle cx="128" cy="126" r="102" fill="none" stroke="#d4af37"
+          stroke-width="3.5" opacity="0.9" />
+  <!-- Blue where the sheet lights it: upper right and lower left. Arcs over
+       the ring rather than a glow filter, because a blur is the first thing
+       to turn to mush at 16px. -->
+  <path d="M 156 28 A 102 102 0 0 1 229 116" fill="none" stroke="#2563eb"
+        stroke-width="4.5" stroke-linecap="round" opacity="0.95" />
+  <path d="M 44 190 A 102 102 0 0 1 28 110" fill="none" stroke="#2563eb"
+        stroke-width="4.5" stroke-linecap="round" opacity="0.95" />
+
+  <!-- The legs: two parallelograms sharing the apex, open at the bottom. The
+       counter starts well below the apex, as the hero's does; a taller one
+       turns the peak into a spike. -->
+  <path fill="url(#peak)" d="M128 24 L30 232 L84 232 L128 96 Z" />
+  <path fill="url(#peak)" d="M128 24 L226 232 L172 232 L128 96 Z" />
+
+  <!-- The right leg's lower face, turned away, from the sweep's underside to
+       the foot. Its upper edge is the one that catches the light. -->
+  <path fill="url(#fold)" d="M172 118 L226 232 L172 232 L141 136 Z" />
+  <path d="M172 118 L141 136" fill="none" stroke="#f0d98a" stroke-width="2"
+        stroke-linecap="round" opacity="0.8" />
+
+  <!-- The sweep. Two circular arcs of different radius sharing their
+       endpoints and bowing the same way, so the belly is the difference of
+       their sagittas, which tapers it to a point at each tip. -->
+  <path d="M 10 202 A 320 320 0 0 1 234 94 A 800 800 0 0 0 10 202 Z"
+        fill="url(#sweep)" />
+</svg>
