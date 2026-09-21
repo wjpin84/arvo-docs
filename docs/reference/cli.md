@@ -15,7 +15,9 @@ arvo-engine session halt <id>|--all [reason...] the kill switch: arm the gate, f
 arvo-engine session explain <id> <time>        the chain behind every position held then
 ```
 
-A session's `<id>` is `<finding>@<executor>`, as `session list` prints it.
+A session's `<id>` is `<finding>@<executor>`, as `session list` prints it,
+with its state, its counts, and its verdict against its finding (with the
+reason, when diverging).
 `<executor>` is `alpaca-paper`, `alpaca-live` or `robinhood-<last four>`.
 
 The MCP server:

@@ -74,10 +74,25 @@ it is the case for demoting the session, decided by a person or the agent.
 The drawdown halt and the daily loss limit protect the account; the verdict
 judges the rule.
 
-!!! note "Being built"
-    Tracked as [#221](https://github.com/wjpin84/arvo-desktop/issues/221) in M11. Today a session shows
-    its fills, refusals and freezes, and the gate's halts; the verdict and
-    its reasons are the next thing the row gains.
+The verdict is on the session's row in the Sessions tab and in Operations,
+in `session list` on the command line, and on the record as a `verdict`
+event each time it changes. The expectation the session was judged against
+is the record's `expectation` event, written at the start. A session on a
+walk-forward or a reported finding has no out-of-sample ledger to expect
+anything from, and stays Inconclusive; the record says so.
+
+The thresholds, so a verdict can be read: the expectancy comparison waits
+for ten closed live trades and fires when the live mean is more than two
+standard errors below the finding's; the drawdown reason fires at one and a
+half times the finding's out-of-sample maximum, at any trade count; the
+frequency reason once four entries were due and fewer than a quarter, or
+more than four times, as many came; the regime reason when most entries,
+and at least three, landed in a regime the finding never traded in; the
+execution reason after five fills, when slippage is past twice what the
+cost model assumed.
+
+!!! note "Since engine 0.4.0"
+    A session started by an older engine shows an empty verdict.
 
 ## The record
 

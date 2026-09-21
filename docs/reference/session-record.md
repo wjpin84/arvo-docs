@@ -8,6 +8,7 @@ reads it from disk; `session explain` walks it.
 | Event | Detail | Caused by |
 |---|---|---|
 | `started` | the experiment, how far the library warmed the shadow | |
+| `expectation` | what the finding's out-of-sample trades lead the session to expect: `trades`, `expectancy`, `deviation`, `max_drawdown`, `entries_per_bar`, `regimes`, `slippage_bps`; or `none` and why | the finding |
 | `instrument` | lot, tick, hours, multiplier the gate sizes against | the source |
 | `feed` | `{streaming, source}` | |
 | `feed_up`, `feed_down`, `feed_ended` | the stream's state, with the reason | |
@@ -23,6 +24,7 @@ reads it from disk; `session explain` walks it.
 | `resumed` | why, when the feed came back | a Resume, or the feed |
 | `resume_refused`, `reconcile_failed`, `audit_failed`, `fetch_failed`, `settle_failed` | the reason | |
 | `halted` | why; for the kill switch also what `flattened` and what `failed` | the gate, or a Halt |
+| `verdict` | `holding`, `diverging` or `inconclusive`, and for diverging the `reason` (`expectancy`, `drawdown`, `frequency`, `regime`, `execution`) with what was seen and what was expected. Written when it changes | a settle |
 | `stopped` | | a Stop |
 
 Times are UTC. Every failure also raises an alert on the engine's event
