@@ -6,6 +6,12 @@ warmed on the library up to today; from then on each completed bar is
 pushed through it, entries go to the risk gate and exits go straight to the
 venue.
 
+A session started after the open catches up on the bars it missed the same
+way: the rule is warmed on them and their signals are on the record, but an
+entry from a bar that closed before the session started is refused
+(`catch-up: …`), never sent. Yesterday's signal at today's market is not the
+trade the finding measured. Exits still go, as under a freeze.
+
 Start one from the **Sessions** tab (choose a finding, choose an executor)
 or the command line. The executors are `alpaca-paper`, `alpaca-live` and
 `robinhood-<last four>`. Paper is drawn apart from real money everywhere it
