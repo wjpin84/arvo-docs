@@ -64,6 +64,24 @@ bond data vendor. The [provider protocol](../extend/providers.md) is
 published, so each is an extension, not a change to the engine. The order
 is decided by which market someone wants to run a rule on.
 
+## Feeding the gates first
+
+Everything above is another gate, view or provider. Since 2026-09-24 the
+order of work is to widen what the gates see before adding to them
+([ADR 0030](https://github.com/wjpin84/arvo-adrs/blob/main/0030-the-gates-are-fed-before-they-are-widened.md)),
+because a chain of deflation, walk-forward, conservative costs, a paper gate
+and a live verdict is worth exactly as much as what runs through it, and today
+that is eight compiled rules on fifteen names.
+
+In order:
+
+1. **Rules as data** ([#225](https://github.com/wjpin84/arvo-desktop/issues/225)): conditions over an indicator library, stored beside the rulesets, so the agent writes rules and not only parameters. A data rule must reproduce the compiled rule's ledger before the compiled one is retired.
+2. **Leaderboard** ([#226](https://github.com/wjpin84/arvo-desktop/issues/226)): findings ranked by deflated out-of-sample expectancy under conservative costs, and only that. Raw return is not a column.
+3. **Universes** ([#227](https://github.com/wjpin84/arvo-desktop/issues/227)): a few hundred daily names and a handful intraday, each list a file with the reason it was chosen, kept fetched. A panel is deflated against the universe's size.
+4. **Pine import** ([#228](https://github.com/wjpin84/arvo-desktop/issues/228)): the subset of Pine v5 the rule language can say, the rest refused by name, so a community's strategies meet the one thing their own tester cannot do.
+5. **Chart** ([#229](https://github.com/wjpin84/arvo-desktop/issues/229)): bars, regimes, signals, fills and refusals drawn from the record. It computes nothing and it is not a gate.
+6. **Option chains for more underlyings** ([#230](https://github.com/wjpin84/arvo-desktop/issues/230)): the recorder pointed past SPY, so the option rules become candidates.
+
 ## Also on the horizon
 
 Volatility regimes and regime-conditioned rules; Bayesian and genetic
