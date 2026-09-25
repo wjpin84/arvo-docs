@@ -12,6 +12,12 @@ entry from a bar that closed before the session started is refused
 (`catch-up: …`), never sent. Yesterday's signal at today's market is not the
 trade the finding measured. Exits still go, as under a freeze.
 
+An exit is stamped at the moment it is sent, like an entry, so the
+two-minute stale rule measures the venue and not the bar. An order that ends
+at the venue without a fill (cancelled, rejected, expired) is an `unfilled`
+event on the record, counts in the session's divergence, and is a line in
+the day's review.
+
 Start one from the **Sessions** tab (choose a finding, choose an executor)
 or the command line. The executors are `alpaca-paper`, `alpaca-live` and
 `robinhood-<last four>`. Paper is drawn apart from real money everywhere it
