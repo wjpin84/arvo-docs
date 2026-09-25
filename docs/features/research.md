@@ -67,3 +67,31 @@ A finding records the ruleset's content hash, the engine's commit and the
 dataset's version. When the ruleset changes, every finding made with the old
 one is marked stale and says so; the same when the data is refetched and
 differs.
+
+## The leaderboard
+
+Every comparable finding in the store, in one order and only one:
+
+1. **Supported under the conservative cost tier**, ordered by the mean
+   profit per closed out-of-sample trade measured under that tier.
+2. **Supported under the stated costs** where the conservative tier was never
+   measured (findings older than the tier).
+3. **Everything else**, whatever its number.
+
+Ties break by drawdown, then by trades. Raw return is a column to read and
+never the order: a ranking by raw return is the overfitting machine every
+screener ships, and Arvo does not ship one. Each row carries the rule, the
+instrument, the interval, both verdicts, the expectancy and which costs it is
+under, the return, the drawdown, the trades, the regimes the trades opened
+in, the search size and whether the data has changed since.
+
+It is the `rank_findings` tool for the agent, `Research.RankFindings` in the
+contract, and on the command line:
+
+```
+arvo-engine [<data-dir>] rank [--rule R] [--instrument I]
+```
+
+Panels are not rows: one configuration across many instruments is not the
+same number as one instrument, and the table would invite reading one
+against the other.
