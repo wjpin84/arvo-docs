@@ -74,6 +74,12 @@ believing them**. Everything else follows from one rule:
 
 ## Where to start
 
+**New here?** [What Arvo does differently](concepts/index.md) is the one page
+that explains why this is not another backtester.
+
+**Want it without a GUI?** [The engine on its own](engine/index.md) — it is a
+complete tool, and the window is one client of it.
+
 1. [Install](getting-started/install.md) the window and the engine.
 2. [Connect an account](getting-started/accounts.md) — Alpaca for bars and paper trading, Robinhood or Yahoo for bars.
 3. [Run a study](how-to/run-a-study.md) and read its verdict.
@@ -81,8 +87,13 @@ believing them**. Everything else follows from one rule:
 
 ## The shape of it
 
-```
-Hypothesis → Experiment → Simulation → Evaluation → Evidence → Research memory → Agent
+```mermaid
+flowchart LR
+    H["Hypothesis"] --> E["Experiment"] --> S["Simulation"] --> EV["Evaluation"]
+    EV --> D["Evidence"] --> M["Research memory"] --> A["Agent"]
+    A -.->|"asks the next question"| H
+
+    style EV fill:#1f6feb,stroke:#1f6feb,color:#fff
 ```
 
 The **engine** (`arvo-engine`) runs studies, keeps the data library, holds
