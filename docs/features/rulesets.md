@@ -89,7 +89,11 @@ trades, to the cent, with the same journal lines.
 - **Exit** may be absent: the rule then leaves on its stop alone.
 
 A rule file is offered under its own name beside Arvo's, with its defaults
-as fixed parameters. A ruleset names it in `rule` and varies its parameters
+as fixed parameters. The agent writes one with `write_rule` and reads what
+the project holds with `list_rules`; the same two are
+`Research.WriteRule` and `Research.ListRuleFiles` in the contract. A file
+that cannot run is listed with its reason rather than dropped, and a rule
+that would shadow one of Arvo's own names is refused. A ruleset names it in `rule` and varies its parameters
 as it would `sma_cross`'s. A finding on a data rule carries the definition
 inside its experiment, so it replays on a machine that never saw the file,
 and is stamped with the rule's content hash. A file whose defaults cannot
