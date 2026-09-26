@@ -85,8 +85,11 @@ instrument, the interval, both verdicts, the expectancy and which costs it is
 under, the return, the drawdown, the trades, the regimes the trades opened
 in, the search size and whether the data has changed since.
 
-It is the `rank_findings` tool for the agent, `Research.RankFindings` in the
-contract, and on the command line:
+It is the **Leaderboard** tab in the window (View, or the palette), where a
+row opens its finding and the rows stay in the order the engine ranked them.
+Sorting by a column there would be a second ranking. It is also the
+`rank_findings` tool for the agent, `Research.RankFindings` in the contract,
+and on the command line:
 
 ```
 arvo-engine [<data-dir>] rank [--rule R] [--instrument I]
