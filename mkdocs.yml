@@ -69,6 +69,7 @@ nav:
       - Research: features/research.md
       - Rules and rulesets: features/rulesets.md
       - Universes: features/universes.md
+      - Importing from Pine: features/pine.md
       - The risk gate: features/risk.md
       - Sessions: features/sessions.md
       - Operations: features/operations.md
