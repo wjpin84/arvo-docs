@@ -377,3 +377,26 @@
     max-width: none;
   }
 }
+
+/* Diagrams drawn inline rather than screenshotted, so they theme with the page
+   and stay diffable. Screenshots of Arvo itself are still deferred. */
+.arvo-figure {
+  margin: 1.4rem 0;
+}
+
+.arvo-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 30rem;
+}
+
+.arvo-figure--wide svg {
+  max-width: 42rem;
+}
+
+.arvo-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}

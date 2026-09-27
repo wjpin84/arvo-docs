@@ -108,6 +108,25 @@ nav:
       - Why Arvo is different: concepts/index.md
       - Core concepts: concepts/trading.md
       - Glossary: glossary.md
+  - Learn trading:
+      - learn/index.md
+      - 1 - Markets: learn/markets.md
+      - 2 - Charts: learn/charts.md
+      - 3 - Market types: learn/market-types.md
+      - 4 - Entries and exits: learn/entries-and-exits.md
+      - 5 - Risk and sizing: learn/risk-and-sizing.md
+      - 6 - Strategy families:
+          - learn/families/index.md
+          - Trend following: learn/families/trend-following.md
+          - Volatility breakout: learn/families/breakout.md
+          - Mean reversion: learn/families/mean-reversion.md
+          - Relative strength: learn/families/relative-strength.md
+          - Opening range: learn/families/opening-range.md
+          - Selling options: learn/families/selling-options.md
+      - 7 - Why a backtest lies: learn/backtest-lies.md
+      - 8 - Reading a verdict: learn/reading-a-verdict.md
+      - 9 - Paper to real money: learn/paper-to-real.md
+      - 10 - What moves the market: learn/what-moves-markets.md
   - Use Arvo:
       - Install: getting-started/install.md
       - First run: getting-started/first-run.md
@@ -124,6 +143,7 @@ nav:
       - Write a ruleset: how-to/write-a-ruleset.md
       - Universes: features/universes.md
       - Import from Pine: features/pine.md
+      - From a Pine script to a verdict: how-to/pine-to-verdict.md
       - Research from Python: how-to/python.md
       - Examples: examples/index.md
   - Run it headless:
