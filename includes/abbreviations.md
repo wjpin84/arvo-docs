@@ -36,3 +36,12 @@
 *[reconcile]: Square a session's own book against what the broker reports, after the two disagreed.
 *[halt]: The kill switch: arm the gate, flatten what can be flattened, and stay stopped until a person clears it.
 *[paper]: Trading against a broker's simulated-money endpoint, with a real API, real fills and real latency.
+*[expectancy]: What a strategy earns per trade on average: win rate times average win, minus loss rate times average loss. Win rate alone says nothing without it.
+*[slippage]: The difference between the price a decision was made at and the price the order actually filled at.
+*[survivorship bias]: Testing on the names that still exist. The failures were removed from the data, so the result is flattered by an answer nobody searched for — which is why no statistical correction can detect it.
+*[look-ahead bias]: Using information in a backtest that did not exist at the time the decision would have been taken.
+*[efficiency ratio]: Net movement divided by total movement over a lookback. A path straight up scores 1.0; one that ends where it started scores 0.0. Arvo calls anything above 0.35 a trend.
+*[variance risk premium]: The historical tendency for options to be priced above what the subsequent volatility turned out to justify, which is what an option seller is paid for.
+*[market impact]: The price move your own order causes. A paper fill does not have it; a real one at size does.
+*[microstructure]: The mechanics of how orders meet — quotes, queues and spreads — which decide what your fill actually is.
+*[volatility clustering]: Large moves tend to follow large moves and quiet periods follow quiet ones. Reliable about size, much weaker about direction.

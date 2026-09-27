@@ -31,9 +31,9 @@ script would have to lose:
 
 ```
 3 construct(s) this cannot translate: request.security: another symbol or
-timeframe; a rule here runs on one instrument at one interval; ta.rsi: this
-build's indicators are SMA, ATR, MAX and MIN; strategy.short: every rule
-here is long only
+timeframe; a rule here runs on one instrument at one interval; ta.stoch: this
+build's indicators are SMA, EMA, ATR, RSI, MACD, MAX and MIN; strategy.short:
+every rule here is long only
 ```
 
 A silently dropped `request.security`, or a dropped short, leaves a rule that

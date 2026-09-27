@@ -1,8 +1,8 @@
 # Glossary
 
-**Rule** — a strategy Arvo implements: the code deciding entries and exits. You do not write rules.
+**Rule** — the entries and exits themselves. Arvo ships compiled rules; you can also write one as a file, `rules/<name>.json`, in named indicators and JSON Logic conditions, and the engine evaluates it identically — to the cent.
 
-**Ruleset** — a document that runs a rule over a search of parameters you choose. You write rulesets. (*Strategy* is the word in code, protocols and stored findings; the window says rule and ruleset.)
+**Ruleset** — a document that runs a rule over a search of parameters you choose. Most work starts here rather than with a new rule. (*Strategy* is the word in code, protocols and stored findings; the window says rule and ruleset.)
 
 **Study** — one rule, one instrument, one search, one verdict. *Walk-forward*, *panel* and *book* are studies of other shapes.
 

@@ -120,9 +120,20 @@ trades, to the cent, with the same journal lines.
 }
 ```
 
-- **Indicators**: `SMA` (of `close` unless `input` says otherwise), `ATR`,
-  `MAX` and `MIN` (of `high` and `low` unless `input` says otherwise). A
-  `period` is a number or the name of a parameter.
+- **Indicators**, each a name you then read in a condition:
+
+    | `kind` | Reads | Notes |
+    |---|---|---|
+    | `SMA` | `close` unless `input` says otherwise | simple average |
+    | `EMA` | same | exponential, seeded on the simple average of the first `period` values |
+    | `ATR` | the bar's range | `period` only |
+    | `RSI` | `close` unless `input` says otherwise | 0–100; reports after `period + 1` bars, since it is computed from changes |
+    | `MACD` | `close` unless `input` says otherwise | `fast`, `slow`, `signal`, and `line`: `macd`, `signal` or `histogram`. One declaration is one series — declare it twice to compare a line against its signal |
+    | `MAX` / `MIN` | `high` / `low` unless `input` says otherwise | rolling extreme |
+
+    A `period` is a number or the name of a parameter. For `MACD`, `fast` must be
+    below `slow` — a fast average that is not faster makes the line zero or
+    inverted, and a cross on it is noise, so it is refused with that reason.
 - **Conditions**: JSON Logic, one operator per object. `{"var": name}` reads
   an indicator, a bar field (`open`, `high`, `low`, `close`, `volume`) or a
   parameter; a bare number is a literal. `>`, `<`, `and`, `or` and `!`
