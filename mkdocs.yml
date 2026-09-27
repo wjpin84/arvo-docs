@@ -47,7 +47,11 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight
@@ -55,7 +59,18 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting started:
+  - Concepts:
+      - What Arvo does differently: concepts/index.md
+      - Trading concepts: concepts/trading.md
+  - The engine:
+      - The engine on its own: engine/index.md
+      - Install: engine/install.md
+      - Configure: engine/configure.md
+      - Command line: engine/cli.md
+      - With Claude Code and other agents: engine/claude.md
+      - With VS Code: engine/vscode.md
+      - Examples: engine/examples.md
+  - The window:
       - Install: getting-started/install.md
       - First run: getting-started/first-run.md
       - Accounts and credentials: getting-started/accounts.md
@@ -69,6 +84,7 @@ nav:
       - Research: features/research.md
       - Rules and rulesets: features/rulesets.md
       - Universes: features/universes.md
+      - Importing from Pine: features/pine.md
       - The risk gate: features/risk.md
       - Sessions: features/sessions.md
       - Operations: features/operations.md
@@ -84,7 +100,6 @@ nav:
       - Halt trading: how-to/halt.md
       - Ask the agent: how-to/agent.md
       - Research from Python: how-to/python.md
-      - Arvo in Claude Code and other agents: how-to/mcp.md
       - Explain a position: how-to/explain.md
   - Examples: examples/index.md
   - Extending:
@@ -92,7 +107,6 @@ nav:
       - Strategies as documents: extend/strategies.md
       - Writing a provider: extend/providers.md
   - Reference:
-      - Command line: reference/cli.md
       - Settings keys: reference/settings.md
       - The session record: reference/session-record.md
       - The risk model: reference/risk-model.md

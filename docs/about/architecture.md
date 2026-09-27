@@ -12,8 +12,13 @@ Four repositories and one for decisions:
 
 ## The research loop
 
-```
-Hypothesis → Experiment → Simulation → Evaluation → Evidence → Research memory → Agent
+```mermaid
+flowchart LR
+    H["Hypothesis"] --> E["Experiment"] --> S["Simulation"] --> EV["Evaluation"]
+    EV --> D["Evidence"] --> M["Research memory"] --> A["Agent"]
+    A -.->|"asks the next question"| H
+
+    style EV fill:#1f6feb,stroke:#1f6feb,color:#fff
 ```
 
 NautilusTrader is the financial runtime underneath, linked in-process:

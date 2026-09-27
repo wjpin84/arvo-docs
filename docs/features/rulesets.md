@@ -22,6 +22,34 @@ code, protocols and findings; the window says rule and ruleset.
 A rule is defined at an interval; a ruleset cannot move it. A one-minute
 `sma_cross` is refused with the reason.
 
+## The option rules and what they can be studied on
+
+No vendor serves an option quote after the fact, so a chain that was not
+recorded on the day is gone. What the engine records is therefore the whole
+of what the option rules can ever be studied on, and the list is a file in
+the project, `option-quotes/underlyings.json`:
+
+```json
+{
+  "reason": "The most liquid US option markets: tight spreads and daily or weekly expiries.",
+  "underlyings": [
+    { "symbol": "SPY", "why": "the deepest option book there is; daily expiries" },
+    { "symbol": "QQQ", "why": "the same for the Nasdaq 100; daily expiries" }
+  ]
+}
+```
+
+Chosen for liquidity and said out loud, the way a [universe](universes.md) is,
+never for what the underlyings returned. Every fifteen minutes of the regular
+session the engine records each one's chain; an underlying that fails is
+named and the rest are still recorded, because today's chain cannot be
+fetched tomorrow. A file that cannot be used leaves SPY recording and says
+why, since recording nothing would be worse.
+
+The job reports the day's cost on disk as it goes, which is one of the three
+numbers that decide whether the library needs a different store
+([#200](https://github.com/wjpin84/arvo-desktop/issues/200)).
+
 ## A ruleset
 
 A JSON file in the project's `rulesets/` folder:
