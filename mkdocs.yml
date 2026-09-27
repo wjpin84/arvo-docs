@@ -143,7 +143,6 @@ nav:
       - Write a ruleset: how-to/write-a-ruleset.md
       - Universes: features/universes.md
       - Import from Pine: features/pine.md
-      - From a Pine script to a verdict: how-to/pine-to-verdict.md
       - Research from Python: how-to/python.md
       - Examples: examples/index.md
   - Run it headless:
