@@ -1,33 +1,53 @@
 # Research
 
-A **study** is the unit of research: one rule, one instrument, a search over
-the rule's parameters, and a verdict. It runs in the engine, on bars from
-the project's library, and is stored as a **finding** you can reopen,
-replay, compare and export.
+**You get an answer you can weigh, not a number you have to trust.**
 
-## What a study does
+Run a study and Arvo comes back with a *finding*: a verdict, plain-language
+advice, and the evidence behind both. The verdict can be `Supported`,
+`NotSupported`, or `Inconclusive` — and that third one is the point. A rule with
+too few trades has not been shown to work *or* to fail, and Arvo says so instead
+of reporting a ratio that looks like an answer.
 
-1. **Warms up and selects in sample.** The rule runs over every point of
-   the search grid on the in-sample window.
-2. **Tests out of sample.** The selected configuration runs on the
-   held-out window — the only numbers reported as a result.
-3. **Deflates.** The best in-sample result is judged against what the best
-   of *that many* random trials would have shown. A grid of forty tries
-   that beats a grid of forty coin flips by nothing is nothing.
-4. **Evaluates.** Against the criteria — at least 30 trades, a positive
-   excess return over the benchmark, a drawdown under 30% — and against
-   a benchmark curve of buying and holding the instrument.
-5. **Asks whether the costs made it.** A result that would be Supported is
-   run again under the **conservative cost tier**: half again the
-   commission, twice the slippage and never under five basis points, twice
-   the fees, twice an option's spread. If it is not Supported there, the
-   finding is refused, with the reason, and the advice says so first: the
-   edge was the cost assumption's, not the rule's. A verdict is never
-   upgraded by this, only refused.
-6. **Records.** The finding, with its verdict, its advice, both curves,
-   the trade ledger with what the rule saw on every trade, the dataset's
-   content hash, the ruleset's hash and the engine's commit — so a finding
-   knows when it has gone **stale** because its data or its ruleset changed.
+A **study** is the unit: one rule, one instrument, a search over the rule's
+parameters. It runs in the engine on bars from the project's library, and is
+stored as a finding you can reopen, replay, compare and export.
+
+## What happens when you run one
+
+```mermaid
+flowchart TD
+    A["**Select**<br/><small>every point of the grid,<br/>on the first part of history</small>"]
+    B["**Test**<br/><small>the winner only, on history<br/>it has never seen</small>"]
+    C["**Discount the search**<br/><small>beat what the best of<br/>that many would score by luck</small>"]
+    D["**Judge**<br/><small>30+ trades, beats buy-and-hold,<br/>drawdown under 30%</small>"]
+    E["**Re-run at higher costs**<br/><small>can only refuse,<br/>never upgrade</small>"]
+    F["**Record**<br/><small>verdict, advice, both curves,<br/>every trade, data fingerprint</small>"]
+
+    A --> B --> C --> D --> E --> F
+    style C fill:#1f6feb,stroke:#1f6feb,color:#fff
+```
+
+Each step in detail:
+
+1. **Selects on the first part of history.** The rule runs over every point of
+   the search grid, in sample.
+2. **Tests on history it never saw.** Only the selected configuration, on the
+   held-out window. These are the only numbers reported as the result.
+3. **Discounts the search.** The best in-sample result is judged against what the
+   best of *that many* random trials would have shown. A grid of forty tries that
+   beats forty coin flips by nothing is nothing.
+4. **Judges it.** Against the criteria — at least 30 trades, a positive excess
+   return over buying and holding the instrument, a drawdown under 30%.
+5. **Checks whether the costs made it.** Anything that would be `Supported` is run
+   again at conservative costs: half again the commission, twice the slippage and
+   never under five basis points, twice the fees, twice an option's spread. If it
+   fails there the finding is refused, and the advice says it first — the edge was
+   the cost assumption's, not the rule's. This step **can only refuse, never
+   upgrade**.
+6. **Records everything.** The verdict, the advice, both curves, the trade ledger
+   with what the rule saw on each trade, the data's content hash, the ruleset's
+   hash and the engine's commit — so a finding knows when it has gone **stale**
+   because its data or its ruleset changed underneath it.
 
 ## Kinds of study
 

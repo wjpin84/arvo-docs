@@ -1,10 +1,26 @@
 # Rules and rulesets
 
-A **rule** is a strategy Arvo implements — the code that decides entries
-and exits. A **ruleset** is a document that runs a rule over a search of
-parameters you choose. You write rulesets; you do not write rules (an
-extension cannot contribute one either). The word *strategy* appears only in
-code, protocols and findings; the window says rule and ruleset.
+**You have a trading idea. These are the two things you write to test it.**
+
+A **rule** says when to enter and when to exit. A **ruleset** says which
+parameter values to try for that rule.
+
+```
+Rule       "buy when the fast average crosses above the slow one"
+Ruleset    "try fast = 5, 10, 20 against slow = 30, 50, 100"
+```
+
+Arvo ships nine rules compiled in, listed below. You can also **write your own
+as a JSON file** under `rules/` — an indicator list and conditions over it — or
+[import one from Pine](pine.md). Either way it is then a rule like any other,
+and goes through the same evaluation.
+
+!!! note "On the word *strategy*"
+    Elsewhere these are all called strategies. Arvo says *rule* for the logic and
+    *ruleset* for the parameter search, because the distinction matters here: a
+    ruleset is a **search**, and how much you searched decides the bar the winner
+    has to clear. `strategy` still appears in code, the protocol and stored
+    findings. See the [glossary](../glossary.md).
 
 ## The rules Arvo ships
 

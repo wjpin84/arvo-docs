@@ -25,18 +25,38 @@ theme:
       toggle:
         icon: material/weather-night
         name: Dark
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
-    - navigation.tabs
+    # No top tab bar: one sidebar, like Zed's docs. A second row of chrome
+    # costs vertical space and makes a docs site look like a brochure.
     - navigation.sections
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.prune
     - navigation.top
     - navigation.footer
+    - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.code.annotate
     - content.tabs.link
+    - content.tooltips
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/wjpin84
+      name: Arvo on GitHub
 
 markdown_extensions:
   - admonition
@@ -54,55 +74,81 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      # Appended to every page, so any jargon term gets a tooltip wherever it
+      # appears. Progressive disclosure without editing prose: a reader who
+      # knows "deflation" reads past it, and one who does not hovers it.
+      base_path: ["."]
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.smartsymbols
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - footnotes
+  - def_list
+  - abbr
 
 nav:
   - Home: index.md
-  - Concepts:
-      - What Arvo does differently: concepts/index.md
-      - Trading concepts: concepts/trading.md
-  - The engine:
-      - The engine on its own: engine/index.md
-      - Install: engine/install.md
-      - Configure: engine/configure.md
-      - Command line: engine/cli.md
-      - With Claude Code and other agents: engine/claude.md
-      - With VS Code: engine/vscode.md
-      - Examples: engine/examples.md
-  - The window:
+  - Start here:
+      - Where to start: start/paths.md
+      - What you can do with Arvo: start/what-you-can-do.md
+      - Why Arvo is different: concepts/index.md
+      - Core concepts: concepts/trading.md
+      - Glossary: glossary.md
+  - Use Arvo:
       - Install: getting-started/install.md
       - First run: getting-started/first-run.md
-      - Accounts and credentials: getting-started/accounts.md
-      - Settings: getting-started/settings.md
-  - Providers:
-      - Sources and executors: providers/index.md
-      - Alpaca: providers/alpaca.md
-      - Robinhood: providers/robinhood.md
-      - Yahoo Finance: providers/yahoo.md
-  - Features:
-      - Research: features/research.md
-      - Rules and rulesets: features/rulesets.md
-      - Universes: features/universes.md
-      - Importing from Pine: features/pine.md
-      - The risk gate: features/risk.md
-      - Sessions: features/sessions.md
-      - Operations: features/operations.md
-      - The audit chain and the journal: features/journal.md
-      - The Agent panel: features/agent.md
-      - The review after the close: features/review.md
-      - Scripts and schedules: features/scripts.md
-  - How-to:
-      - Write a ruleset: how-to/write-a-ruleset.md
+      - Connect an account: getting-started/accounts.md
       - Run a study and read the verdict: how-to/run-a-study.md
       - Start a paper session: how-to/paper-session.md
       - When a session freezes: how-to/frozen-session.md
       - Halt trading: how-to/halt.md
-      - Ask the agent: how-to/agent.md
-      - Research from Python: how-to/python.md
       - Explain a position: how-to/explain.md
-  - Examples: examples/index.md
-  - Extending:
+      - Ask the agent: how-to/agent.md
+      - Settings: getting-started/settings.md
+  - Build strategies:
+      - Rules and rulesets: features/rulesets.md
+      - Write a ruleset: how-to/write-a-ruleset.md
+      - Universes: features/universes.md
+      - Import from Pine: features/pine.md
+      - Research from Python: how-to/python.md
+      - Examples: examples/index.md
+  - Run it headless:
+      - engine/index.md
+      - Install the engine: engine/install.md
+      - Configure: engine/configure.md
+      - Command line: engine/cli.md
+      - With Claude Code: engine/claude.md
+      - With VS Code: engine/vscode.md
+      - Engine examples: engine/examples.md
+  - Connect your data:
+      - providers/index.md
+      - Alpaca: providers/alpaca.md
+      - Robinhood: providers/robinhood.md
+      - Yahoo Finance: providers/yahoo.md
+  - How Arvo decides:
+      - Research: features/research.md
+      - The risk gate: features/risk.md
+      - Sessions: features/sessions.md
+      - The audit chain and the journal: features/journal.md
+      - The review after the close: features/review.md
+      - The Agent panel: features/agent.md
+      - Operations: features/operations.md
+      - Scripts and schedules: features/scripts.md
+  - Extend Arvo:
       - Extensions: extend/extensions.md
       - Strategies as documents: extend/strategies.md
       - Writing a provider: extend/providers.md
@@ -112,7 +158,6 @@ nav:
       - The risk model: reference/risk-model.md
       - Verdicts and advice: reference/verdicts.md
       - The API and the packages: reference/api.md
-  - Glossary: glossary.md
   - About:
       - Architecture: about/architecture.md
       - Decisions: about/decisions.md

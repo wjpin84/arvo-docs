@@ -1,11 +1,33 @@
 # The risk gate
 
-One policy sizes every entry, in a backtest and in a live session: a
-proposal goes to the gate, the gate sizes it or refuses it, the executor
-sends what survives, and the fill comes back to the gate's book. Nothing
-reaches a venue except through that door. If the live side had a second
-risk engine, every stored verdict would describe a system that does not
-exist.
+**Your risk controls are the same in research, on paper and live.** Arvo does not
+keep one set of rules for backtests and another for real trading, so a backtest
+cannot assume a position your account would have refused. And if trading is
+halted, restarting Arvo does not quietly remove the halt.
+
+**How it works.** Every entry is a *proposal*. It goes to one gate, which either
+sizes it or refuses it with a named reason; only what survives reaches the
+broker. Fills come back to the same gate's book. Exits never ask — nothing may
+stop you reducing risk.
+
+```mermaid
+flowchart LR
+    R["Rule fires"] --> P["Proposal"]
+    P --> G{"The gate"}
+    G -->|"sized"| X["Broker"]
+    G -->|"refused,<br/>with a reason"| REC["On the record"]
+    X --> F["Fill"] --> B[("The gate's book")]
+    B --> G
+
+    style G fill:#1f6feb,stroke:#1f6feb,color:#fff
+```
+
+**Why it is one gate and not two.** If the live side had its own risk engine,
+every stored verdict would describe a system that does not exist. The same code
+runs in both places, so a finding is a statement about what would actually have
+happened.
+
+Field-by-field detail is in [the risk model](../reference/risk-model.md).
 
 ## What the gate decides
 
