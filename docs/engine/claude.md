@@ -132,4 +132,7 @@ them** — not to place trades of its own. Starting a session is a person's
 decision, made with the control token, and promotion to real money needs five
 paper days on the record regardless of who asks.
 
+The [arvo-skills plugin](skills.md) teaches the agent how to use these tools
+the way Arvo means them — verdict before number, every run a search.
+
 [Where this is going →](../about/horizon.md)

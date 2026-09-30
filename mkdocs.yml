@@ -151,6 +151,7 @@ nav:
       - Configure: engine/configure.md
       - Command line: engine/cli.md
       - With Claude Code: engine/claude.md
+      - Skills for Claude Code: engine/skills.md
       - With VS Code: engine/vscode.md
       - Engine examples: engine/examples.md
   - Connect your data:
