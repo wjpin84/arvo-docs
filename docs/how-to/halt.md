@@ -63,6 +63,11 @@ you what it asked for, and the broker is the authority on what happened.
 A restart does not lift it. A new session will not start under it. A person clears
 it deliberately.
 
+A session the gate halted on its own — on a position the venue already held
+when it started, or on the drawdown limit — stays up, halted, and takes the kill
+switch like any other: what it holds is flattened through the session and lands
+on the record, rather than being closed at the venue by hand.
+
 That is the point: a limit a restart lifts is not a limit. If halting were
 something a crash could undo, it would not be a safety control.
 
