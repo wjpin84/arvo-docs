@@ -22,7 +22,9 @@ A position adopted this way has no bar or signal behind it, and
 
 ## The feed went dark
 
-A streaming session whose socket stops answering freezes with *stale feed*
-and thaws by itself when the feed is back; you can also resume it at once,
+A streaming session whose socket stops answering during the session freezes
+with *stale feed* and thaws by itself when the feed is back; you can also resume it at once,
 since nothing about the book is in doubt. The poll underneath keeps catching
-bars up either way.
+bars up either way. Silence after the close on a regular-hours instrument is
+not a dead feed and writes nothing: the stream reconnects quietly, so a freeze
+on the record is one that happened while the market was open.
