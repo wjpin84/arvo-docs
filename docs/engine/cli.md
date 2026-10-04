@@ -15,6 +15,10 @@ arvo-engine [<data-dir>] review [YYYY-MM-DD]
 arvo-engine [<data-dir>] rank [--rule R] [--instrument I]
 arvo-engine [<data-dir>] universes [refresh]
 arvo-engine [<data-dir>] pine <file> [--interval 1day] [--keep]
+arvo-engine [<data-dir>] option-quotes spreads <symbol>
+arvo-engine [<data-dir>] option-quotes compact
+arvo-engine [<data-dir>] views [--print]
+arvo-engine [<data-dir>] evidence rewrite
 arvo-engine help
 ```
 
@@ -74,6 +78,53 @@ arvo-engine ~/arvo session explain twin_cross@alpaca-paper 2026-09-25T14:35:00
 For everything held at that instant: bar → signal → gate → order → fill →
 position, with the rule that fired, the value it fired on, and the regime. This
 is the one verb that needs no running engine — it reads the record on disk.
+
+### `option-quotes` — the recorded chains, read
+
+The engine records option chains because no vendor serves a quote after the
+day. `spreads` reads the whole recording for one underlying and prints the
+half-spread by premium, beside what the cost model charges:
+
+```sh
+arvo-engine ~/arvo option-quotes spreads SPY
+```
+
+It changes nothing. The model's constant stays where it is until someone
+decides to move it, because moving it re-costs every option study.
+
+`compact` rewrites every finished day of the recording as Parquet, about a
+seventeenth of the size. The engine does this by itself each hour; the verb is
+for a project whose engine is not running. A day's CSV is removed only after
+the Parquet file has been read back and holds the same rows.
+
+```sh
+arvo-engine ~/arvo option-quotes compact
+```
+
+### `views` — the project in DuckDB
+
+Writes `.arvo/views.sql`, which names each of the project's stores as a DuckDB
+view, and says how to open it. `--print` shows the file and writes nothing.
+See [Ask your project a question](../how-to/ask-your-project.md).
+
+```sh
+arvo-engine ~/arvo views
+```
+
+### `evidence rewrite` — an older store, in today's form
+
+A finding is stored as a compact record with its curves in a Parquet file
+beside it. A store written before that holds each finding as one indented JSON
+file with the curves inside, and is several times larger.
+
+```sh
+arvo-engine ~/arvo evidence rewrite
+```
+
+Stop the engine first; the verb refuses while one is serving the folder. Each
+finding's new form is read back and compared with what was there before its
+file is replaced, and a finding the build cannot read is named and left as it
+was. Nothing about a finding changes but its format number.
 
 ## Running a session
 

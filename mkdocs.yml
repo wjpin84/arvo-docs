@@ -55,7 +55,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/wjpin84
+      link: https://github.com/wjpin84/arvo-engine
       name: Arvo on GitHub
 
 markdown_extensions:
@@ -143,6 +143,7 @@ nav:
       - Write a ruleset: how-to/write-a-ruleset.md
       - Universes: features/universes.md
       - Import from Pine: features/pine.md
+      - From a Pine script to a verdict: how-to/pine-to-verdict.md
       - Research from Python: how-to/python.md
       - Examples: examples/index.md
   - Run it headless:
@@ -150,6 +151,7 @@ nav:
       - Install the engine: engine/install.md
       - Configure: engine/configure.md
       - Command line: engine/cli.md
+      - Ask your project a question: how-to/ask-your-project.md
       - With Claude Code: engine/claude.md
       - Skills for Claude Code: engine/skills.md
       - With VS Code: engine/vscode.md

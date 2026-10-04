@@ -62,9 +62,15 @@ named and the rest are still recorded, because today's chain cannot be
 fetched tomorrow. A file that cannot be used leaves SPY recording and says
 why, since recording nothing would be worse.
 
-The job reports the day's cost on disk as it goes, which is one of the three
-numbers that decide whether the library needs a different store
-([#200](https://github.com/wjpin84/arvo-desktop/issues/200)).
+Recording happens on trading days only, and a chain that has not changed since
+the last snapshot is not written again. While a day is being recorded its file
+is a CSV. Once the day is over the engine rewrites it as Parquet, about a
+seventeenth of the size, and removes the CSV after reading the Parquet file
+back and finding the same rows in it.
+
+`arvo-engine <dir> option-quotes spreads SPY` reads the whole recording and
+prints what an option cost to cross, by premium. See
+[the command line](../engine/cli.md).
 
 ## A ruleset
 
