@@ -63,10 +63,11 @@ one per platform, named `arvo-engine-<version>-<triple>.zip`, each with a
     chmod +x ~/.local/arvo/arvo-engine ~/.local/arvo/arvo-mcp-server
     ```
 
-!!! note "While the repository is private"
-    `gh release download` needs the [GitHub CLI](https://cli.github.com) signed
-    in to an account with access. Once the repository is public, `curl -L` on
-    the asset URL is enough.
+!!! note "Without the GitHub CLI"
+    The repository is public, so `curl -L` on the asset URL works as well:
+    `https://github.com/wjpin84/arvo-engine/releases/download/v<version>/<file>`.
+    `gh release download` needs the [GitHub CLI](https://cli.github.com)
+    installed and signed in.
 
 Put the directory on your `PATH`, or call the binary by its full path — nothing
 in the engine depends on being installed anywhere in particular.

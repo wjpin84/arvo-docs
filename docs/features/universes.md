@@ -54,8 +54,9 @@ tier. The whole-library panel (`ViewPanel`) is unchanged.
 
 The project ships with three, written by hand and named for what they are:
 the S&P 100 as listed on the day the file was written, the thirty most-traded
-US ETFs, and ten liquid names at five minutes for the intraday rules. After a
-month of keeping them fetched, three numbers decide
-[#200](https://github.com/wjpin84/arvo-desktop/issues/200): the library's
-size on disk, the time to load a universe's bars for a panel, and the time to
-fetch the day.
+US ETFs, and ten liquid names at five minutes for the intraday rules. Keeping
+them fetched is also how the library's cost was measured: 160 series are about
+50 MB, and loading all hundred members of the S&P 100 takes about half a
+second of a panel that runs for minutes. So the bar library stays as CSV files
+until something larger needs otherwise
+([arvo-engine #32](https://github.com/wjpin84/arvo-engine/issues/32)).

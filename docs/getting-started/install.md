@@ -46,8 +46,8 @@ or `pip` for the tooling.
     cargo tauri dev
     ```
 
-`fetch_engine.py` needs the GitHub CLI signed in while the engine repository
-is private. To build the engine yourself instead:
+`fetch_engine.py` downloads with the GitHub CLI, which has to be installed and
+signed in. To build the engine yourself instead:
 
 ```sh
 git clone --recurse-submodules https://github.com/wjpin84/arvo-engine
