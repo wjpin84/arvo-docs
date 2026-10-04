@@ -12,7 +12,7 @@ reads it from disk; `session explain` walks it.
 | `instrument` | lot, tick, hours, multiplier the gate sizes against | the source |
 | `feed` | `{streaming, source}` | |
 | `feed_up`, `feed_down`, `feed_ended` | the stream's state, with the reason | |
-| `reconciled` | at start: `adopted`, `cancelled`, `stranded`; mid-session: `corrected` and the whole `positions` book | a start, or a Reconcile |
+| `reconciled` | at every start, flat included: `adopted` as `(symbol, quantity, entry)` for what the venue already held, `cancelled`, `stranded`; mid-session: `corrected` and the whole `positions` book. The review rebuilds its book from these, so an empty `adopted` closes any lot the record still held | a start, or a Reconcile |
 | `bar` | `at`, `close`, how many signals it produced | |
 | `signal` | `id` (`<bar>#<n>`), `bar`, side, quantity, price, `exit`, and the journal: `rule`, `signal`, `regime` | the bar |
 | `submitted` | `{signal, order}` | the signal, accepted by the gate |
