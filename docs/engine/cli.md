@@ -6,6 +6,7 @@ argument parsing, the discovery and the token handling to drift.
 
 ```
 arvo-engine [<data-dir>]                        serve; the app data directory when none is given
+arvo-engine [<data-dir>] shutdown
 arvo-engine [<data-dir>] session list
 arvo-engine [<data-dir>] session start <finding> <executor>
 arvo-engine [<data-dir>] session stop|reconcile|resume <id>
@@ -199,6 +200,40 @@ What it refuses, it lists: a strategy using a function Arvo cannot say is
 reported as unsupported with that function named, so you know what was dropped
 instead of getting a rule that quietly does something else.
 [Importing from Pine →](../features/pine.md)
+
+## Stopping the engine
+
+```sh
+arvo-engine shutdown
+arvo-engine ~/arvo shutdown
+```
+
+Asks the engine to stop and waits until it has. On the way out the engine:
+
+1. asks every running session to stop, so each record ends with `stopped`;
+2. stops the plugins it started;
+3. removes its `engine.json` and exits.
+
+Positions are left as they are. Stopping is not flattening: `session halt` is
+the kill switch. A session that does not end within fifteen seconds is named,
+and the engine goes anyway.
+
+The verb then says what became of each session:
+
+```
+the engine (pid 30312) has stopped
+  20260921T134031540-AAPL.AIEX@alpaca-paper: stopped, positions as they were
+```
+
+With no engine running it says so and exits 0, so it can sit in front of a
+build. Use it before rebuilding the engine: on Windows the binary cannot be
+replaced while it runs.
+
+Ending the process with the operating system does none of this. No destructor
+runs, the plugins are orphaned, and a session's record simply ends.
+
+A session does not start again by itself when the engine does. Start it with
+`session start`.
 
 ## Exit codes
 
