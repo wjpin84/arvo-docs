@@ -67,7 +67,7 @@ arvo-engine ~/arvo universes refresh    # fetch it
 import arvo
 
 engine = arvo.connect()
-found = engine.run_panel("etf30", strategy="sma_cross")
+found = engine.run_panel("etf30", author="script:panel", strategy="sma_cross")
 
 print(found.verdict, found.read_this_first)
 print("members beating buy-and-hold:", found.beat_benchmark, "of", found.instruments)

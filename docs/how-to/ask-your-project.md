@@ -34,6 +34,7 @@ A view exists when its store does. A new project with no findings has no
 |---|---|
 | `bars` | Every bar in the library: `instrument`, `interval`, `time`, and the prices. `time` is the bar's open, in UTC |
 | `dividends` | Cash dividends by `ex_date` |
+| `fetches` | One row per fetch: when, which source, what was asked, the hash before and after, and `change`, which says whether the fetch re-adjusted or revised the bars already held |
 | `option_quotes` | Every recorded option chain. `chain` is the underlying and the feed, such as `SPY.indicative` |
 | `findings` | One row per finding: `verdict`, `reasons`, `author`, `trials`, and the whole `record` as JSON |
 | `curves` | Every equity curve, one row per point. Join to `findings` on `artifact` |
