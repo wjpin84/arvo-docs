@@ -23,9 +23,11 @@ twice is refused with the reason.
 
 ## Kept fetched
 
-Every six hours the engine's `universes` job fetches each member whose
+Every hour the engine's `universes` job fetches each member whose
 series is missing or behind the last completed bar, through the source that
-serves its venue, back to `since` on first fill. A member that fails is named
+serves its venue, back to `since` on first fill. A daily series is due once
+the date has rolled over in UTC. An intraday series is due five minutes after
+the regular close, so the day's bars are there when its review is read. A member that fails is named
 and the rest are still fetched. The same on demand:
 
 ```

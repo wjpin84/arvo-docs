@@ -6,6 +6,14 @@ project's `reviews/` folder, as `YYYY-MM-DD.md` beside a `.json` with the
 same content. It is never rewritten, so what you read is what was written;
 ask for an earlier day and it is written then.
 
+A day is written only once it is over. Open today before the close, or a
+day still to come, and you get the records as they stand with nothing saved,
+so the day can still be written when it ends.
+
+The chart of each session draws the day's five-minute bars from the library.
+The `universes` job fetches them within the hour after the close for any
+instrument in a universe at that interval.
+
 ## What it says
 
 For each session that had anything to say:

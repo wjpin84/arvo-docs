@@ -66,7 +66,7 @@ arvo-engine ~/arvo review               # today
 arvo-engine ~/arvo review 2026-09-25    # a given day
 ```
 
-Written under `reviews/` and printed. It covers every session's fills against
+Printed, and written under `reviews/` once the day is over. It covers every session's fills against
 the price the rule decided at, what the gate refused and why, the stretches a
 session was frozen or halted, and what a person did by hand.
 
