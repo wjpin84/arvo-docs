@@ -85,8 +85,9 @@ with the size of the search each was held to.
 
 A finding records the ruleset's content hash, the engine's commit and the
 dataset's version. When the ruleset changes, every finding made with the old
-one is marked stale and says so; the same when the data is refetched and
-differs.
+one is marked stale and says so; the same when the bars it read are
+refetched and differ. The version covers the span the run read, so a series
+that only gains new bars stales nothing.
 
 ## The leaderboard
 

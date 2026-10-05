@@ -55,4 +55,5 @@ is ever judged under it.
 ## Staleness
 
 `stale_reason` on a finding: `data`, `ruleset`, or both. The finding stays;
-it no longer describes the present.
+it no longer describes the present. `data` means a bar inside the span the
+run read has changed. A series that has only grown is not stale.

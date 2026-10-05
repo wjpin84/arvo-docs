@@ -182,7 +182,7 @@ too little evidence, and the two usual ways forward are:
   [Write a ruleset →](write-a-ruleset.md)
 
 ```python
-panel = engine.run_panel("etf30", strategy="rsi_dip_in_an_uptrend")
+panel = engine.run_panel("etf30", author="script:pine", strategy="rsi_dip_in_an_uptrend")
 print(panel.verdict, panel.read_this_first)
 ```
 

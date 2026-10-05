@@ -47,6 +47,10 @@ in mind:
   ([#9](https://github.com/wjpin84/arvo-desktop/issues/9));
 - members with no series at the interval yet were left out, by name.
 
+A panel an agent or a script runs is saved as that author's finding and
+deflated against everything the author has run, as a study is. From Python
+`author` is required.
+
 `Research.RunPanel` in the contract; `run_panel` on the agent's research
 tier. The whole-library panel (`ViewPanel`) is unchanged.
 

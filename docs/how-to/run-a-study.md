@@ -35,5 +35,12 @@ experiment as a file another engine could re-run.
 
 ## When it goes stale
 
-A finding whose data was refetched and differs, or whose ruleset changed,
+A finding whose bars were refetched and differ, or whose ruleset changed,
 is marked stale with the reason. Re-run it; the old one stays as history.
+
+Only the bars the run read count. A new bar each day, or deeper history
+fetched later, leaves the finding fresh. The alert says what the fetch did to
+the series: **re-adjusted** after a split or dividend, where every price moved
+by one factor and a re-run should agree, or **revised**, where the source
+changed prices the finding rested on. Every fetch is logged in
+`data/fetches.jsonl`.
