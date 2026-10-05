@@ -59,7 +59,8 @@ session on `alpaca-live` or a Robinhood account is refused unless:
 
 - the finding's verdict is **Supported**;
 - the finding has run on `alpaca-paper` for at least **five days**, by the
-  paper session's record;
+  paper session's record: days on which it took a bar, not calendar days,
+  so a session stopped for a fortnight has not run for one;
 - that paper session was not **Diverging** from the finding when last
   judged.
 

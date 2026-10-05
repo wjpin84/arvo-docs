@@ -155,7 +155,7 @@ available defence.
 
 The gate in front of real money: a live executor is refused unless the same
 finding has run on paper for at least **five days without diverging** from its
-backtest.
+backtest. Days the session took bars on, not days on the calendar.
 
 In the engine, so the command line, the window and an agent are all held to it.
 
