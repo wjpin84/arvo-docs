@@ -34,9 +34,15 @@ A record ends with `stopped`, `failed` or `dropped`. An engine that is killed
 writes nothing on its way out, so its sessions' records stop wherever they
 were. The next engine to start on the project finds each one, adds the
 `dropped` line, raises an alert, and lists the session as `dropped` until it
-is started again. Nothing is restarted for you: what the session held is
-still at the venue, and a start adopts it. Stop an engine with
-`arvo-engine shutdown` and every record ends with `stopped` instead.
+is started again. Stop an engine with `arvo-engine shutdown` and every record
+ends with `stopped` instead.
+
+Either way, the sessions that were running come back. `sessions/hosted.json`
+lists what the engine has up, rewritten as that changes and left alone when
+the engine goes down. The next engine starts each one through the ordinary
+start, so the promotion gate runs and the reconcile adopts what the venue
+holds. A session that was frozen or halted is not brought back: it was
+waiting for a person. One the gate refuses is named in an alert.
 
 Times are UTC. Every failure also raises an alert on the engine's event
 channel, which the window's alerts list and the Operations view show.

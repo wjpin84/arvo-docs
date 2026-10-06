@@ -41,6 +41,12 @@ appears.
 | `halted` | the gate stopped the account: the drawdown halt, or the kill switch. Stays until released |
 | `stopped` | asked to stop; positions left as they are |
 | `failed` | the thread ended with an error; the reason is on the row |
+| `dropped` | the engine hosting it ended without stopping it; the next engine found the record unfinished |
+
+A session that was `starting` or `running` when the engine went down comes
+back when the next engine starts, through the ordinary start: the gate runs
+and the reconcile adopts what the venue holds. A frozen or halted one waits
+for a person, as it did.
 
 ## Reconciliation as an incident
 
