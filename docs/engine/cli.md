@@ -230,10 +230,13 @@ build. Use it before rebuilding the engine: on Windows the binary cannot be
 replaced while it runs.
 
 Ending the process with the operating system does none of this. No destructor
-runs, the plugins are orphaned, and a session's record simply ends.
+runs and a session's record simply ends. The plugins still go: each is tied to
+the engine's life by the kernel (a Job Object on Windows, the parent-death
+signal on Linux), and one left behind by an older build is stopped by the next
+engine before it starts its own.
 
-A session does not start again by itself when the engine does. Start it with
-`session start`.
+The sessions that were running come back when the next engine starts, through
+the ordinary start. A frozen or halted one waits for a person, as it did.
 
 ## Exit codes
 
